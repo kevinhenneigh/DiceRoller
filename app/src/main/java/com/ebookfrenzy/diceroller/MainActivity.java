@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button rollDiceButton;
     private ImageView imageDie1;
     private ImageView imageDie2;
     private ImageView imageDie3;
@@ -21,6 +22,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rollDiceButton = findViewById(R.id.rollDiceButton);
+        rollDiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rollDie1();
+                rollDie2();
+                rollDie3();
+                rollDie4();
+                rollDie5();
+                rollDie6();
+            }
+        });
 
         imageDie1 = findViewById(R.id.image_die1);
         imageDie1.setOnClickListener(new View.OnClickListener() {
